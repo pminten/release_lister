@@ -1,4 +1,3 @@
-release-lister
-==============
+# ReleaseLister
 
-Creates a webpage listing releases from projects on github
+** TODO: Add description **
