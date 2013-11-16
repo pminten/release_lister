@@ -28,9 +28,8 @@
           <ul class="list-group">
             <li class="list-group-item news-holder">
             <pre class="news"><%= h(first_lines(rel.body)) %>
-<span class="news-more"><%= h(rest_lines(rel.body)) %></span>
-<%= if rest_lines(rel.body) != [] do %><span class="news-dots">...</span></pre><% end %>
-            </li>
+<span class="news-more"><%= h(rest_lines(rel.body)) %></span><%= if rest_lines(rel.body) != "" do %><span class="news-dots">
+...</span></pre><% end %></li>
           </ul>
         </div>
         <% end %>

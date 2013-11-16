@@ -3,3 +3,4 @@ elixir-lang/ex_doc
 elixir-lang/dynamo
 elixir-lang/ecto
 rmies/monad
+pminten/release_lister
