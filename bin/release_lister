@@ -1,0 +1,4 @@
+#!/usr/bin/env elixir
+Enum.each Path.wildcard(Path.expand("../../_build/shared/lib/*/ebin", __FILE__)),
+          &Code.prepend_path/1
+ReleaseLister.CLI.run(System.argv)

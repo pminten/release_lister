@@ -19,6 +19,7 @@ defmodule ReleaseLister.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat.git" }
   defp deps do
-    []
+    [{:httpotion, github: "myfreeweb/httpotion"},
+     {:json, github: "cblage/elixir-json"}]
   end
 end

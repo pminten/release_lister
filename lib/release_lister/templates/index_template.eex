@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Release Lister</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/release_lister/rl.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="test-muted">Release Lister</h3>
+      </div>
+      <div class="row releases">
+        <%= lc rel inlist releases do %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <strong><a href="https://github.com/<%= rel.repo %>"><%= h(rel.repo) %></a>
+              &nbsp;&nbsp;<a href="<%= rel.html_url %>"><%= h(rel.name) %></a></strong>
+              <span class="pull-right"><%= h(format_timestamp(rel.published_at)) %></span>
+            </h3>
+          </div>
+          <div class="panel-body">
+            <%= if descriptions[rel.repo], do: h(descriptions[rel.repo]), else: "(no description)" %>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item news-holder">
+            <pre class="news"><%= h(first_lines(rel.body)) %>
+<span class="news-more"><%= h(rest_lines(rel.body)) %></span>
+<%= if rest_lines(rel.body) != [] do %><span class="news-dots">...</span></pre><% end %>
+            </li>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/jquery/jquery-1.10.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Specific release_lister stuff -->
+    <script src="assets/release_lister/rl.js"></script>
+  </body>
+</html>

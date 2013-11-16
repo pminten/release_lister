@@ -1,3 +1,17 @@
+This is the licence for the Elixir code.
+
+The bootstrap stuff is under it's own license (Apache 2.0) and jQuery has the
+MIT license.
+
+The CSS specific for release_lister was mostly copied from a bootstrap example
+and is under the Apache 2.0 license.
+
+The JS specific for release_lister is under the MIT license.
+
+The MIT license is below, the Apache 2.0 license is in the LICENSE.Apache file.
+
+--
+
 The MIT License (MIT)
 
 Copyright (c) 2013 Peter Minten
