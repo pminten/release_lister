@@ -24,9 +24,7 @@ defmodule ReleaseLister.Fetcher do
       IO.puts("Fetching releases of #{repo}")
       r = ReleaseLister.HttpClient.get("repos/#{repo}/releases")
       if r.status_code == 200 do
-        o = Enum.map(r.body, &Release[repo: repo].update(Dict.to_list(&1)))
-        IO.puts("Found #{length o} releases")
-        o
+        Enum.map(r.body, &Release[repo: repo].update(Dict.to_list(&1)))
       else
         IO.puts(:stderr, "Error #{r.status_code} for releases of repo #{repo}: #{inspect r.body}")
         []
