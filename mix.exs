@@ -3,7 +3,7 @@ defmodule ReleaseLister.Mixfile do
 
   def project do
     [ app: :release_lister,
-      version: "0.0.1",
+      version: "0.1.1",
       elixir: "~> 0.11.3-dev",
       deps: deps ]
   end
